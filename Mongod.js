@@ -167,6 +167,10 @@ class Mongod extends events.EventEmitter {
       flags.push('--nojournal');
     }
 
+    if (config.smallfiles) {
+      flags.push('--smallfiles');
+    }
+
     if (config.storageEngine != null) {
       flags.push('--storageEngine', config.storageEngine);
     }
